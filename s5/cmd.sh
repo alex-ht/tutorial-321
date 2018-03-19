@@ -13,3 +13,8 @@
 export train_cmd="queue.pl --mem 2G"
 export decode_cmd="queue.pl --mem 4G"
 export mkgraph_cmd="queue.pl --mem 8G"
+
+# 如果沒有安裝gridengine，先改成下面樣子
+# export train_cmd="run.pl"
+# export decode_cmd="run.pl"
+# export mkgraph_cmd="run.pl"

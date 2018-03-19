@@ -25,7 +25,10 @@ stage=0
                    # 可以在shell直接輸入參數, 例如 ./run.sh --stage -3
 
 if [ $stage -le -3 ]; then # 用 stage 控制起始執行位置
-  local/download_and_untar.sh $data $data_url data_aishell || exit 1;
+  # 注意:原本指令是下面的，如果有先下載好15GB的音檔，可以直接解壓縮
+  # local/download_and_untar.sh $data $data_url data_aishell || exit 1;
+  [ ! -d $data ] && mkdir -p $data
+  tar -xf [預先下載的data_aishell.tgz] -C $data
   local/download_and_untar.sh $data $data_url resource_aishell || exit 1;
 fi
 
