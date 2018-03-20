@@ -46,7 +46,7 @@ train_set=train_sp
 ali_dir=${gmm_dir}_sp_ali
 graph_dir=$gmm_dir/graph
 
-local/nnet3/run_ivector_common.sh --stage $stage || exit 1;
+local/nnet3/run_ivector_common.sh --stage $stage --train_set train_5utt --test-sets "dev_5utt test_5utt" || exit 1;
 
 if [ $stage -le 7 ]; then
   echo "$0: creating neural net configs";
