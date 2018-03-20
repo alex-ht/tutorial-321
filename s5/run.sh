@@ -30,6 +30,7 @@ if [ $stage -le -3 ]; then # 用 stage 控制起始執行位置
   [ ! -d $data ] && mkdir -p $data
   tar -xf [預先下載的data_aishell.tgz] -C $data
   local/download_and_untar.sh $data $data_url resource_aishell || exit 1;
+  exit 0; # 先停下來，看下載了什麼
 fi
 
 if [ $stage -le -2 ]; then
